@@ -13,7 +13,7 @@ export class authController{
 
             let response = await service.login(req.body)
 
-            return res.status(201).json(response)
+            return res.status(200).json(response)
         } catch (error) {
             return res.status(500).json({error})
         }
@@ -22,7 +22,7 @@ export class authController{
     async checkDetails(req: extendedRequest, res: Response){
         try {
             if(req.info){
-                return res.status(201).json({
+                return res.status(200).json({
                     info: req.info
                 })
             }
